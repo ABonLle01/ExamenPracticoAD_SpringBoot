@@ -28,12 +28,8 @@ public class ClienteController {
     }
 
     @GetMapping("/total/{cantidad}")
-    public List<Cliente> getMejoresClientes(@PathVariable Long cantidad, @RequestBody String estado){
-        if(Objects.equals(estado.toLowerCase(), "activo"))
-            return r.getClientesByTotalGreaterThan(cantidad);
-        else
-            return null;
-
+    public List<Cliente> getMejoresClientes(@PathVariable Long cantidad){
+        return r.getClientesByTotalGreaterThan(cantidad);
     }
 
 
